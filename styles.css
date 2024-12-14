@@ -1,0 +1,509 @@
+body {
+    background: #1e5799;
+    background: -moz-linear-gradient(top,  #1e5799 0%, #7db9e8 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(100%,#7db9e8));
+    background: -webkit-linear-gradient(top,  #1e5799 0%,#7db9e8 100%);
+    background: -o-linear-gradient(top,  #1e5799 0%,#7db9e8 100%);
+    background: -ms-linear-gradient(top,  #1e5799 0%,#7db9e8 100%);
+    background: linear-gradient(to bottom,  #1e5799 0%,#7db9e8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 );
+    min-height:100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 460px;
+    height: 460px;
+    margin: auto;
+    margin-top: 15vh;
+}
+
+.tree {
+    position: absolute;
+    background: #2e7055;
+    width: 65%;
+    height: 70%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    bottom: 13%;
+    left: 18%;
+    z-index: 2;
+}
+
+.floor {
+    position: absolute;
+    width: 35%;
+    height: 15%;
+    border-radius: 50%;
+    background: #69122a;
+    bottom: -8%;
+    left: 32%;
+}
+
+.star {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: #ffdc5e;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    left: 40.5%;
+    top: 5%;
+    z-index: 3;
+}
+
+.star-highlight {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: #ffedad;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 50% 70%, 50% 60%, 50% 46%, 50% 36%);
+    left: 40.5%;
+    top: 5%;
+    z-index: 3;
+}
+
+.star-light {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: #ffefb5;
+    filter: opacity(.7);
+    border-radius: 50%;
+    left: 40.5%;
+    top: 5%;
+    z-index: 2;
+    animation: star 3s ease-in-out infinite;
+}
+
+.trunk {
+    position: absolute;
+    height: 15%;
+    width: 10%;
+    background: #2e2713;
+    bottom: 0;
+    left: 45%;
+    z-index: 1;
+}
+
+.ornament {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.large {
+    height: 10%;
+    width: 10%;
+    animation: lights 1.5s linear infinite;
+}
+
+.medium {
+    height: 7%;
+    width: 7%;
+    animation: lights 1.4s linear infinite;
+}
+
+.small {
+    width: 5%;
+    height: 5%;
+    animation: lights 1.2s linear infinite;
+}
+
+.orange {
+    background: #FDC590;
+}
+
+.pink {
+    background: #f799d2;
+}
+
+.green {
+    background: #9af5c6;
+}
+
+.blue {
+    background: #7dd4ff;
+}
+
+.purple {
+    background: #afa6ff;
+}
+
+.or1 { left: 33%; top: 42%; }
+.or2 { top: 26%; left: 52%; }
+.or3 { top: 38%; left: 48%; }
+.or4 { top: 29%; left: 41.5%; }
+.or5 { top: 59%; left: 35%; }
+.or6 { top: 41%; left: 59%; }
+.or7 { top: 51%; right: 42%; }
+.or8 { top: 55%; right: 26%; }
+.or9 { top: 67%; left: 55%; }
+.or10 { top: 75%; left: 42%; }
+.or11 { top: 70%; left: 21%; }
+.or12 { top: 73%; right: 22.5%; }
+
+.shine {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    background: white;
+    border-radius: 50%;
+    filter: opacity(48%);
+    top: 6%;
+    right: 10%;
+}
+
+/* Add hidden class to hide ornaments initially */
+.hidden {
+    visibility: hidden;
+}
+
+/* Popup Form Styling */
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Snowflakes CSS */
+.snowflakes {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.snowflakes i {
+    position: absolute;
+    top: -50px;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    opacity: 0;
+    animation: snowfall 10s linear infinite;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes lights {
+    0%, 100% { filter: opacity(1); }
+    50% { filter: opacity(0.3); }
+}
+
+/* Popup Button */
+#showFormBtn {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    padding: 10px 20px;
+    background: #f47842;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+/* Style for the card */
+.card-info {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(0, 22, 153, 0.9), rgba(0, 77, 34, 0.9)); /* Darker Blue to Darker Green gradient */
+    border-radius: 15px;
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.8); /* Darker shadow for more depth */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    z-index: 9999;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards; /* Smooth fade-in with ease-out */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth scaling and shadow effects */
+}
+
+/* Adding a subtle hover effect for interactivity */
+.card-info:hover {
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.9); /* Deeper shadow on hover */
+}
+
+/* Header Style */
+.card-info h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow for emphasis */
+}
+
+/* Style for text inside the card */
+.card-info p {
+    color: #f0f0f0;
+    font-size: 18px;
+    margin: 10px 0;
+    line-height: 1.6;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Soft shadow to make the text pop */
+}
+
+/* Button Style */
+.card-info button {
+    padding: 12px 20px;
+    background-color: #1d9c50; /* Darker green button */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover Effect */
+.card-info button:hover {
+    background-color: #157b3c; /* Even darker green */
+    transform: translateY(-2px); /* Button lift effect */
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Card animation to bring attention */
+.card-info .enter-card {
+    animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Glassmorphism Style Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Slightly darker overlay */
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Glassmorphism Popup Content */
+.popup-content {
+    background: rgba(255, 255, 255, 0.15); /* Frosted glass effect */
+    border-radius: 15px;
+    width: 450px;
+    padding: 30px;
+    backdrop-filter: blur(12px); /* Glassmorphism blur effect */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 90%;
+    animation: popupZoomIn 0.6s ease-out forwards;
+}
+
+/* Popup Title */
+.popup-content h2 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Fields */
+.popup-content input {
+    width: 100%;
+    padding: 14px;
+    margin: 15px -10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.2);
+    color: #333;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.2);
+   
+}
+
+.popup-content input:focus {
+    outline: none;
+    border-color: #64b5f6; /* Light blue for focus */
+    box-shadow: 0 0 8px rgba(100, 181, 246, 0.6);
+   
+}
+
+/* Submit Button */
+.popup-content button {
+    padding: 16px 36px;
+    background: #64b5f6; /* Light blue button */
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.popup-content button:hover {
+    background: #42a5f5; /* Darker blue when hovered */
+    transform: translateY(-2px);
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Popup Animation */
+@keyframes popupZoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Button to Trigger Popup */
+#showFormBtn {
+    padding: 14px 30px;
+    background:#1f8dbd; /* Light beige for trigger button */
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+#showFormBtn:hover {
+    background: #226b90; /* Darker beige on hover */
+    transform: translateY(-3px);
+}
+@keyframes lights {
+    100% {
+      filter: brightness(.7);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+    0% {
+        filter: brightness(.7);
+    }
+  }
+  
+  @keyframes star {
+    100% {
+      transform: scale(.5);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    0% {
+        transform: scale(.5);
+    }
+  }
+  /* Snowflakes container */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.snowflakes i {
+    position: absolute;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: snowfall 10s linear infinite;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+    }
+}

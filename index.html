@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Tree Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="tree"></div>
+
+    <!-- Initial ornaments will be hidden, they will appear after form submission -->
+    <div class="ornament large orange or1 hidden"><div class="shine"></div></div>
+    <div class="ornament medium blue or2 hidden"><div class="shine"></div></div>
+    <div class="ornament small green or3 hidden"><div class="shine"></div></div>
+    <div class="ornament small pink or4 hidden"><div class="shine"></div></div>
+    <div class="ornament large purple or5 hidden"><div class="shine"></div></div>
+    <div class="ornament medium purple or6 hidden"><div class="shine"></div></div>
+    <div class="ornament medium blue or7 hidden"><div class="shine"></div></div>
+    <div class="ornament large pink or8 hidden"><div class="shine"></div></div>
+    <div class="ornament medium orange or9 hidden"><div class="shine"></div></div>
+    <div class="ornament medium green or10 hidden"><div class="shine"></div></div>
+    <div class="ornament large pink or11 hidden"><div class="shine"></div></div>
+    <div class="ornament blue large or12 hidden"><div class="shine"></div></div>
+
+    <div class="star-light"></div>
+    <div class="star"></div>
+    <div class="star-highlight"></div>
+    <div class="trunk"></div>
+    <div class="floor"></div>
+</div>
+
+<!-- Button to trigger the pop-up form -->
+<button id="showFormBtn">Add Ornament</button>
+
+<!-- Pop-up Form -->
+<div class="popup" id="popupForm">
+    <div class="popup-content">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <h2>Complete Your Info</h2>
+        <form id="form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required><br>
+            <label for="objective">Objective:</label>
+            <input type="text" id="objective" required><br>
+            <label for="risks">Risks You Are Willing to Take:</label>
+            <textarea id="risks" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!-- Snowflakes Animation -->
+<div class="snowflakes">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

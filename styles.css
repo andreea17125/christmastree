@@ -153,12 +153,12 @@ body {
     right: 10%;
 }
 
-/* Add hidden class to hide ornaments initially */
+
 .hidden {
     visibility: hidden;
 }
 
-/* Popup Form Styling */
+
 .popup {
     display: none;
     position: fixed;
@@ -188,7 +188,7 @@ body {
     cursor: pointer;
 }
 
-/* Snowflakes CSS */
+
 .snowflakes {
     pointer-events: none;
     position: fixed;
@@ -225,7 +225,7 @@ body {
     50% { filter: opacity(0.3); }
 }
 
-/* Popup Button */
+
 #showFormBtn {
     position: absolute;
     top: 10%;
@@ -236,56 +236,55 @@ body {
     color: white;
     cursor: pointer;
 }
-/* Style for the card */
+
 .card-info {
-    display: none; /* Initially hidden */
+    display: none; 
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 350px;
     padding: 25px;
-    background: linear-gradient(135deg, rgba(0, 22, 153, 0.9), rgba(0, 77, 34, 0.9)); /* Darker Blue to Darker Green gradient */
+    background: linear-gradient(135deg, rgba(0, 22, 153, 0.9), rgba(0, 77, 34, 0.9)); 
     border-radius: 15px;
-    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.8); /* Darker shadow for more depth */
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.8); 
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     z-index: 9999;
     opacity: 0;
-    animation: fadeIn 0.6s ease-out forwards; /* Smooth fade-in with ease-out */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth scaling and shadow effects */
+    animation: fadeIn 0.6s ease-out forwards; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
 }
 
-/* Adding a subtle hover effect for interactivity */
+
 .card-info:hover {
-    transform: translate(-50%, -50%) scale(1.05); /* Slightly increase size on hover */
-    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.9); /* Deeper shadow on hover */
+    transform: translate(-50%, -50%) scale(1.05); 
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.9); 
 }
 
-/* Header Style */
 .card-info h2 {
     font-size: 26px;
     margin-bottom: 15px;
     color: #fff;
     font-weight: bold;
     letter-spacing: 1.5px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow for emphasis */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); 
 }
 
-/* Style for text inside the card */
+
 .card-info p {
     color: #f0f0f0;
     font-size: 18px;
     margin: 10px 0;
     line-height: 1.6;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Soft shadow to make the text pop */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); 
 }
 
-/* Button Style */
+
 .card-info button {
     padding: 12px 20px;
-    background-color: #1d9c50; /* Darker green button */
+    background-color: #1d9c50; 
     color: white;
     border: none;
     border-radius: 25px;
@@ -296,13 +295,13 @@ body {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Button Hover Effect */
+
 .card-info button:hover {
-    background-color: #157b3c; /* Even darker green */
-    transform: translateY(-2px); /* Button lift effect */
+    background-color: #157b3c; 
+    transform: translateY(-2px); 
 }
 
-/* Smooth fade-in animation */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -314,7 +313,7 @@ body {
     }
 }
 
-/* Card animation to bring attention */
+
 .card-info .enter-card {
     animation: slideIn 0.6s ease-out forwards;
 }
@@ -329,7 +328,7 @@ body {
         opacity: 1;
     }
 }
-/* Glassmorphism Style Popup */
+
 .popup {
     display: none;
     position: fixed;
@@ -337,26 +336,26 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Slightly darker overlay */
+    background: rgba(0, 0, 0, 0.3); 
     justify-content: center;
     align-items: center;
     z-index: 100;
 }
 
-/* Glassmorphism Popup Content */
+
 .popup-content {
-    background: rgba(255, 255, 255, 0.15); /* Frosted glass effect */
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 15px;
     width: 450px;
     padding: 30px;
-    backdrop-filter: blur(12px); /* Glassmorphism blur effect */
+    backdrop-filter: blur(12px); 
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     text-align: center;
     max-width: 90%;
     animation: popupZoomIn 0.6s ease-out forwards;
 }
 
-/* Popup Title */
+
 .popup-content h2 {
     font-size: 32px;
     color: #fff;
@@ -364,7 +363,7 @@ body {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Input Fields */
+
 .popup-content input {
     width: 100%;
     padding: 14px;
@@ -382,15 +381,15 @@ body {
 
 .popup-content input:focus {
     outline: none;
-    border-color: #64b5f6; /* Light blue for focus */
+    border-color: #64b5f6; 
     box-shadow: 0 0 8px rgba(100, 181, 246, 0.6);
    
 }
 
-/* Submit Button */
+
 .popup-content button {
     padding: 16px 36px;
-    background: #64b5f6; /* Light blue button */
+    background: #64b5f6; 
     color: white;
     border: none;
     font-size: 18px;
@@ -402,11 +401,11 @@ body {
 }
 
 .popup-content button:hover {
-    background: #42a5f5; /* Darker blue when hovered */
+    background: #42a5f5;
     transform: translateY(-2px);
 }
 
-/* Close Button */
+
 .close-btn {
     position: absolute;
     top: 15px;
@@ -421,7 +420,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Popup Animation */
+
 @keyframes popupZoomIn {
     0% {
         transform: scale(0.8);
@@ -433,10 +432,10 @@ body {
     }
 }
 
-/* Button to Trigger Popup */
+
 #showFormBtn {
     padding: 14px 30px;
-    background:#1f8dbd; /* Light beige for trigger button */
+    background:#1f8dbd; 
     border: none;
     color: white;
     font-size: 18px;
@@ -448,7 +447,7 @@ body {
 }
 
 #showFormBtn:hover {
-    background: #226b90; /* Darker beige on hover */
+    background: #226b90; 
     transform: translateY(-3px);
 }
 @keyframes lights {
@@ -474,7 +473,7 @@ body {
         transform: scale(.5);
     }
   }
-  /* Snowflakes container */
+ 
 .snowflakes {
     position: fixed;
     top: 0;
